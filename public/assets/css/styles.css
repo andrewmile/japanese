@@ -1,0 +1,45 @@
+.temp-hide {
+	display: none;
+}
+
+.word-list {
+	text-align: center;
+}
+
+.li-word {
+	float: left;
+}
+
+.li-english {
+	float: right;
+}
+
+.li-kana {
+	float: none;
+}
+
+.toggle-btns {
+	float: right;
+}
+
+a.list-group-item:after {
+	content:'';
+    display:block;
+    clear: both;
+}
+
+span.span14 {
+	font-size: 18px;
+}
+
+ul.conjugations {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+ul.conjugations li span { 
+	float: left;
+    text-align: right;
+    width: 100px;
+    padding-right: 10px;
+}
