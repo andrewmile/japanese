@@ -24,8 +24,33 @@
       {{ link_to_route("lists", "Japanese", null, ['class' => 'navbar-brand']) }}
     </div>
 
+<?php
+	$lists = [
+		       'All Verbs' => 'vb', 
+		        'Ru Verbs' => 'vb/ru', 
+		         'U Verbs' => 'vb/u',
+		     'U Verbs - u' => 'vb/u/u',
+		   'U Verbs - tsu' => 'vb/u/tsu',
+		    'U Verbs - ru' => 'vb/u/ru',
+		    'U Verbs - mu' => 'vb/u/mu',
+		    'U Verbs - bu' => 'vb/u/bu',
+		    'U Verbs - nu' => 'vb/u/nu',
+		    'U Verbs - ku' => 'vb/u/ku',
+		    'U Verbs - gu' => 'vb/u/gu',
+		    'U Verbs - su' => 'vb/u/su'
+	];
+?>
+
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
+			<li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lists <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            @foreach($lists as $list => $link)
+					{{ link_to("/list/{$link}", $list, ['class' => 'list-group-item']) }}
+				@endforeach
+	          </ul>
+	        </li>
 			@if(Auth::check())
 				<li>{{ link_to_route("words.create", "Add") }}</li>
 			@endif
