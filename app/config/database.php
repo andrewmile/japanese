@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
+			'host'      => 'andrewmorgan.me',
 			'database'  => 'japanese',
-			'username'  => 'root',
-			'password'  => 'root',
+			'username'  => 'learnjapanesenow',
+			'password'  => '4uNE^oeL7Ag2',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
