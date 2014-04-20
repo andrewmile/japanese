@@ -14,7 +14,7 @@ class Word extends Eloquent {
 
 	public function conjugations()
 	{
-		return $this->hasMany('Conjugation');
+		return $this->hasMany('Conjugation')->orderByRaw("FIELD(form, 'negative', 'past', 'negative past', 'te', 'masu')");
 	}
 
 }
