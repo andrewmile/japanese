@@ -111,8 +111,9 @@ class WordsController extends \BaseController {
 			return Redirect::to('login');
 		}
 
-		$word = Word::findOrFail($id);
-		return View::make('words.edit_word')->with('word', $word);
+		$word = Word::with('conjugations')->findOrFail($id);
+		$conjugations = $word->conjugations;
+		return View::make('words.edit_word')->with(['word' => $word, 'conjugations' => $conjugations]);
 	}
 
 	/**
@@ -141,7 +142,7 @@ class WordsController extends \BaseController {
 		$word->romaji = Input::get('romaji');
 		$word->english = Input::get('english');
 		$word->save();
-		return Redirect::route('words.index');
+		return Redirect::route('words.show', $id);
 	}
 
 	/**

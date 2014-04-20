@@ -8,14 +8,7 @@
 
     <br>
 
-    @if(count($conjugations))
-        <p><b>Conjugations:</b></p>
-        <ul class="conjugations">
-            @foreach($conjugations as $conjugation)
-                <li><span class="span20w">{{ $conjugation->form }}:</span>{{ $conjugation->word }}</li>
-            @endforeach
-        </ul>
-    @endif
+    @include('conjugations/conjugation_list')
     
     <br>
 

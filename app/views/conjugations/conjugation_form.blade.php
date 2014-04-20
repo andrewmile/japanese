@@ -1,6 +1,17 @@
+<?php
+$conjugations = [
+	'' => '',
+	'negative' => 'negative',
+	'past' => 'past',
+	'negative past' => 'negative past',
+	'te' => 'te',
+	'masu' => 'masu'
+];
+?>
+
 <div class="form-group">
 	{{ Form::label('form', 'Form') }}
-	{{ Form::text('form', $value = null, array('class' => 'form-control')) }}
+	{{ Form::select('form', $conjugations, $value = null, array('class' => 'form-control')) }}
 	{{ $errors->first('form') }}
 </div>
 
