@@ -52,13 +52,20 @@ $subtypes = [
 ];
 ?>
 
-<?php $subtype_class = !$word->type ? 'temp-hide' : '' ?>
+<?php 
+if(isset($word)) {
+	$subtype_class = !$word->type ? 'temp-hide' : '' ;
+} else {
+	$subtype_class = 'temp-hide';
+}
+
+?>
 
 <div class="form-group adj vb subtype {{$subtype_class}}">
 	{{ Form::label('subtype', 'Subtype') }}
 
 	@foreach($subtypes as $subtype => $values)
-		<?php $subtype_value_class = !($word->type == $subtype) ? 'temp-hide' : '' ?>
+		<?php $subtype_value_class = !isset($word) || !($word->type == $subtype) ? 'temp-hide' : '' ?>
 		{{ Form::select('subtype', $values, $value = null, array('class' => 'form-control ' . $subtype_value_class . ' ' . $subtype)) }}
 	@endforeach
 
