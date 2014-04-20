@@ -11,7 +11,7 @@
   </label>
 </div>
      
-    @if($type)
+    @if(isset($type))
 		<h1>Word List - {{ $subtype . ' ' . $type }}</h1>
 	@else
 		<h1>Word List - All</h1>
