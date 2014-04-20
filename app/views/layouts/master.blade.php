@@ -47,7 +47,7 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lists <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            @foreach($lists as $list => $link)
-					{{ link_to("/list/{$link}", $list, ['class' => 'list-group-item']) }}
+					<li>{{ link_to("/list/{$link}", $list) }}</li>
 				@endforeach
 	          </ul>
 	        </li>
